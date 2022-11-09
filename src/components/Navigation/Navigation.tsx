@@ -2,11 +2,16 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { navigationConfig } from '../../constants/navigationConfig';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 import classes from './Navigation.module.scss';
 
 const Navigation = () => {
   const { t } = useTranslation();
+  const { isActive } = useTypedSelector((state) => state.menu);
   const rootClasses: string[] = [classes.navigation];
+  if (isActive) {
+    rootClasses.push(classes.active);
+  }
 
   return (
     <nav className={rootClasses.join(' ')}>
