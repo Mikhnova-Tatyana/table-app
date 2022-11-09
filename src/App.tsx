@@ -1,9 +1,13 @@
+// import './scss/main.scss';
 import React, { FC } from 'react';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './router/Router';
 
-const App:FC = () => (
+const App: FC = () => (
   <div className="App">
-    Hello React!
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   </div>
 );
 
