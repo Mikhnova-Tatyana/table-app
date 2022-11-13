@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../Header/Header';
-import SubHeader from '../SubHeader/SubHeader';
 import classes from './Layout.module.scss';
+import Header from '../Header/Header';
+import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
 
 const Layout: FC = () => (
-  <header className={classes.layout}>
+  <div className={classes.layout}>
     <Header />
-    <SubHeader />
+    <BreadCrumbs />
     <Outlet />
-  </header>
+  </div>
 );
+
 export default Layout;
